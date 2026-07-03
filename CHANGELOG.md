@@ -1,3 +1,20 @@
+## 🔄 Update V5
+
+** Sigma Profession Filter (Classic): Fixes and Addition of the Addon to the pack.
+• Fixed UI&Checkboxes positioning.
+• Fixed errors when recipes don't have a header.
+• Fixed random refreshes when the window was opened for the first time after a login/reload.
+• Fixed an arithmetic crash when opening professions (like First Aid) caused by uncached items returning a missing item level.
+• Fixed Lua errors and crashes caused by querying invalid or removed spell IDs from the client database.
+• Fixed crashes in the Search Box and "Toggle Unlearned Recipes" filters when encountering missing spell names.
+• Fixed a missing table initialization (OriginalHeaders) that was completely breaking the Crafting window.
+• Fixed frame initialization issues by safely hooking into Blizzard's native UI lifecycle.
+• Fixed caching logic to safely load missing reagents, tools, and created items without throwing exceptions.
+• Fixed the "Training Points" label anchor offset resetting when collapsing headers with Leatrix Plus enabled.
+• Fixed 23rd line not being able to render when Leatrix Plus was enabled.
+
+---------
+
 ## 🔄 Update V4
 
 ** BNFriendsToggle: Fix+Rewrite+Cleaning
