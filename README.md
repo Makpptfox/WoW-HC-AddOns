@@ -69,6 +69,22 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 * Removed the GUI. (Use `/awrp store`, `/awrp restore` and `/awrp status` to use the addon).
 * Added a global variable to store the profiles account-wide.
 
+### [Sigma Profession Filter (Classic)](https://www.curseforge.com/wow/addons/sigma-profession-filter-classic)
+> *"WoWClassic Addon to filter the recipes of professions"*
+
+**Implemented Fixes:**
+* Fixed UI&Checkboxes positioning.
+* Fixed errors when recipes don't have a header.
+* Fixed random refreshes when the window was opened for the first time after a login/reload.
+* Fixed an arithmetic crash when opening professions (like First Aid) caused by uncached items returning a missing item level.
+* Fixed Lua errors and crashes caused by querying invalid or removed spell IDs from the client database.
+* Fixed crashes in the Search Box and "Toggle Unlearned Recipes" filters when encountering missing spell names.
+* Fixed a missing table initialization (OriginalHeaders) that was completely breaking the Crafting window.
+* Fixed frame initialization issues by safely hooking into Blizzard's native UI lifecycle.
+* Fixed caching logic to safely load missing reagents, tools, and created items without throwing exceptions.
+* Fixed the "Training Points" label anchor offset resetting when collapsing headers with Leatrix Plus enabled.
+* Fixed 23rd line not being able to render when Leatrix Plus was enabled.
+
 ---
 
 ## 📄 License & Distribution Policy
@@ -77,4 +93,5 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 * **Strict No Redistribution:** Reposting, redistributing, packaging, or uploading any of the originally created addons or the specific updated forks provided in this repository to platforms like CurseForge, WoWInterface, WowUp, or any other third-party site is strictly prohibited without explicit, prior written authorization.
 * **No Commercial Distribution:** You may not monetize the addon files themselves. Selling the addons, gating them behind paywalls (e.g., Patreon), or including them in any paid compilations or premium client packages is strictly forbidden.
 * **Updated Addons (Forks):** The original underlying code of the addons in the `Updated Addons/` folder remains under their original zlib license. However, the specific modifications, fixes, and distributions provided in this repository are governed by the strict non-redistribution and non-commercial distribution policies outlined above.
+* **Sigma Profession Filter (Classic):** The original codebase by Sigma88 is strictly "All Rights Reserved". However, explicit written authorization has been granted by the original author to fork, improve, and host this updated version on this GitHub repository. Full credit for the original creation belongs to Sigma88. This specific fork remains strictly bound by the non-redistribution and non-commercial policies outlined above.
 * **Reasoning:** I do not want to have to handle the addon websites' communities and people (outside of my github), neither do I want people abusing my work to make a buck, nor do I want the updated addons being reposted on said websites, out of respect for the original creators (whom, as of writing this, haven't updated said addons on their original pages in years) and to maintain control over the distribution of these specific forks.
