@@ -1,9 +1,10 @@
-## Interface: 11508
-## Title: DCAlert
+## Interface: 11509
+## Title: DC Alert
+## Notes: Warns you when the client loses server connection. /dcalert for commands.
 ## Author: Mâk
-## Version: 2.0
-## Notes: Warning for when the client loses server connection. /dcalert for commands.
+## Category: Mâk's AddOns Pack
+## IconTexture: 132284
+## Version: 2.1.0
+## DefaultState: enabled
 ## SavedVariables: DCAlertDB
-
-
 DCAlert.lua

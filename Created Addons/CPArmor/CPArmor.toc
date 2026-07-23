@@ -1,5 +1,9 @@
-## Interface: 11508
+## Interface: 11509
+## Title: Character Panel Armor
+## Notes: Shows your armor and its physical reduction in your character panel.
 ## Author: Mâk
-## Title: CharacterPanelArmor
-## Notes: Show your armor and its physical reduction in your character panel.
+## Category: Mâk's AddOns Pack
+## IconTexture: 134950
+## Version: 2.1.0
+## DefaultState: enabled
 CPArmor.lua

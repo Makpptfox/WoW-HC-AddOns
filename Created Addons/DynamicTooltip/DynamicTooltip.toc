@@ -1,7 +1,9 @@
-## Interface: 11508
-## Title: DynamicTooltip
-## Notes: Anchor the tooltip to the cursor and replace it by default during combat. (Also fixes tooltip lingering when slow hovering and holding left click to move the camera)
+## Interface: 11509
+## Title: Dynamic Tooltip
+## Notes: Anchor the tooltip to the cursor and replace it by its default position during combat. (Also fixes tooltip lingering when slow hovering and holding left click to move the camera)
 ## Author: Mâk
-## Version: 1.0
-
+## Category: Mâk's AddOns Pack
+## IconTexture: 1500877
+## Version: 2.1.0
+## DefaultState: enabled
 DynamicTooltip.lua

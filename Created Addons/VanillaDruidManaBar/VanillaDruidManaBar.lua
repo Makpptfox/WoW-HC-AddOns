@@ -67,13 +67,15 @@ end
 bar:SetScript("OnEnter", function(self)
     if VDManaBar and not VDManaBar.locked then
         GameTooltip_SetDefaultAnchor(GameTooltip, self)
-        GameTooltip:SetText("Move me to the correct position then lock me in the options.", 1.0, 1.0, 1.0)
+        GameTooltip:SetText("Move me to the correct position\nthen lock me in the options.", nil, nil, nil, nil, true)
+		GameTooltipTextLeft1:SetJustifyH("CENTER")
         GameTooltip:Show()
     end
 end)
 
 bar:SetScript("OnLeave", function()
     GameTooltip:Hide()
+	GameTooltipTextLeft1:SetJustifyH("LEFT")
 end)
 
 bar:SetScript("OnUpdate", function(self)

@@ -1,6 +1,8 @@
 # WoW Classic Hardcore Addons
 
-Collection of addons created and updated by and for myself, compatible with Classic Hardcore 1.15.8.
+# (The "Updated" Addons ARE NOT (yet) updated to the new API as of 1.15.9!!)
+
+Collection of addons created and updated by and for myself, compatible with Classic Hardcore 1.15.9.
 
 All addons are provided "as is", without warranty of any kind. I do not claim ownership of the original code for the addons located in the `Updated Addons` folder. Original authors are credited via links to their respective project pages, and all modifications are strictly documented below.
 
@@ -8,7 +10,7 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 
 * **You can receive the updates automatically from my github if you uses the WowUp application**
 	
-	Launch the WowUp application, on the left side, navigate to "Get Addons", top right "Install from URL", paste `https://github.com/Makpptfox/WoW-HC-AddOns-2026` in the "Addon URL" field, press "Import" then press "Install". 
+	Launch the WowUp application, on the left side, navigate to "Get Addons", top right "Install from URL", paste `https://github.com/Makpptfox/WoW-HC-AddOns` in the "Addon URL" field, press "Import" then press "Install". 
 	Once completed, my GitHub avatar will appear, and WowUp will automatically fetch all addons every time a new release is pushed to this repository.
 	
 * **You can safely disable any specific addon you do not wish to use directly from the in-game addon menu without impacting the functionality of the rest of the pack.**
@@ -17,24 +19,103 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 
 ## 🛠️ Created Addons
 
-* **BNFriendsToggle:**
+<details>
+  <summary>BNFriendsToggle:</summary>
+
+![BNFriendsToggle](.github/img/BNFT.gif)
+
+</details>
     Adds a button in the friend list to toggle the display of Battle.net friends on or off.
-* **CPArmor:**
+	
+&nbsp;
+
+<details>
+  <summary>CPArmor:</summary>
+
+![CPArmor](.github/img/CPA.png)
+
+</details>
     Adds a small text indicator on the top left of the character panel to show armor and % physical damage reduction. Eliminates the need to open the defense tab for this specific metric.
-* **DCAlert:**
+	
+&nbsp;
+
+<details>
+  <summary>DCAlert:</summary>
+
+![DCAlert](.github/img/DCA.gif)
+
+</details>
     Provides a warning when the client loses server connection.
-* **DynamicTooltip:**
+	
+&nbsp;
+
+<details>
+  <summary>DynamicTooltip:</summary>
+
+![DynamicTooltip](.github/img/DTT.gif)
+
+</details>
     Anchors the tooltip to the cursor and replaces it by default during combat. Fixes tooltip lingering when slowly hovering and holding left-click to move the camera.
-* **LanguageSwapper:**
+	
+&nbsp;
+
+<details>
+  <summary>LanguageSwapper:</summary>
+
+![LanguageSwapper](.github/img/LGS.gif)
+
+</details>
     Creates a button in the character panel to smoothly swap between known languages.
-* **RDH (RaidDispelHighlight):**
+	
+&nbsp;
+
+<details>
+  <summary>RDH (RaidDispelHighlight):</summary>
+
+![RDH (RaidDispelHighlight)](.github/img/RDH.gif)
+
+</details>
     Highlights the victim's raid frame with a pulse when a dispelable debuff is applied.
-* **SSB (SoulSeeker Begone):**
+	
+&nbsp;
+
+<details>
+  <summary>SSB (SoulSeeker Begone):</summary>
+
+![SSB (SoulSeeker Begone)](.github/img/SSB.gif)
+
+</details>
     Removes the occasional "-Soulseeker" suffix from player nicknames in the chat, reducing visual clutter specific to the HC environment.
-* **CategoryChecker:**
+	
+&nbsp;
+
+<details>
+  <summary>CategoryChecker:</summary>
+
+![CategoryChecker](.github/img/CC.png)
+
+</details>
     Checks if an item has a category cooldown (i.e. potions) and if so shows it in the tooltip.
-* **VanillaDruidManaBar:**
+	
+&nbsp;
+
+<details>
+  <summary>VanillaDruidManaBar:</summary>
+
+![VanillaDruidManaBar](.github/img/VDMB.gif)
+
+</details>
     Adds a fully configurable mana bar while in cat or bear form while staying true to the vanilla visual design.
+	
+&nbsp;
+
+<details>
+  <summary>DynamicUILayout:</summary>
+
+![DynamicUILayout](.github/img/DUL.gif)
+
+</details>
+    Dynamically change the UI layout that you have already saved in Edit Mode depending on the size of your group.
 
 ---
 

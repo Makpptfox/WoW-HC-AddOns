@@ -1,0 +1,10 @@
+## Interface: 11509
+## Title: Dynamic UI Layout
+## Notes: Dynamically change the UI layout depending on the size of your group.
+## Author: Mâk
+## Category: Mâk's AddOns Pack
+## IconTexture: 464820
+## Version: 1.0.0
+## DefaultState: enabled
+## SavedVariables: DynamicUILayoutDB
+DynamicUILayout.lua

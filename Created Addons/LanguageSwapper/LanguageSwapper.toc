@@ -1,9 +1,11 @@
-## Interface: 11508
+## Interface: 11509
 ## Title: Language Swapper
 ## Notes: Creates a button in the character panel to smoothly swap between known languages.
 ## Author: Mâk
-## Version: 1.0.0
-## DefaultState:  enabled
+## Category: Mâk's AddOns Pack
+## IconTexture: 134465
+## Version: 1.1.0
+## DefaultState: enabled
 ## SavedVariablesPerCharacter: LanguageSwapperDB
 LanguageSwapper.lua
 

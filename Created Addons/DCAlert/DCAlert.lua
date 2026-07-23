@@ -115,6 +115,11 @@ local function HandleChatCommand(msg)
     elseif cmd == "lock" then
         db.locked = not db.locked
         print("DCAlert: " .. (db.locked and "Locked" or "Unlocked"))
+        
+        -- clear active tooltip state
+        if db.locked and GameTooltip:IsOwned(addon.frame) then
+            GameTooltip:Hide()
+        end
     elseif cmd == "reset" then
         db.posX, db.posY = 0, -40
         addon.frame:ClearAllPoints()
@@ -143,11 +148,23 @@ local function BuildUI()
     addon.statusText:SetText("Connected")
     addon.pingText = addon.frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     addon.pingText:SetPoint("TOP", addon.statusText, "BOTTOM", 0, -2)
-    addon.frame:SetScript("OnDragStart", function(self) if not db.locked and IsAltKeyDown() then self:StartMoving() end end)
+    
+    addon.frame:SetScript("OnDragStart", function(self) if not db.locked then self:StartMoving() end end)
     addon.frame:SetScript("OnDragStop", function(self)
         self:StopMovingOrSizing()
         local _, _, _, x, y = self:GetPoint()
         db.posX, db.posY = x, y
+    end)
+
+    addon.frame:SetScript("OnEnter", function(self)
+        if not db.locked then
+            GameTooltip:SetOwner(self, "ANCHOR_BOTTOM")
+            GameTooltip:SetText("Move me to the correct position then lock me with /dcalert lock.", nil, nil, nil, nil, true)
+            GameTooltip:Show()
+        end
+    end)
+    addon.frame:SetScript("OnLeave", function(self)
+        GameTooltip:Hide()
     end)
 end
 

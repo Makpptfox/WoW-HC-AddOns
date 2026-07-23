@@ -1,8 +1,10 @@
-## Interface: 11508
-## Title: |cff00aeffBN|rFriendsToggle
-## Notes: Adds a button in your friendlist to toggle on/off |cff00aeffB|rattle|cff00aeffN|ret friends.
+## Interface: 11509
+## Title: BN Friends Toggle
+## Notes: Adds a button in your friendlist to toggle on/off BattleNet friends.
 ## Author: Mâk
-## Version: 2.0.0
-## DefaultState:  enabled
+## Category: Mâk's AddOns Pack
+## IconTexture: 134149
+## Version: 2.1.0
+## DefaultState: enabled
 ## SavedVariables: BNToggleSaveData
 BNFriendsToggle.lua

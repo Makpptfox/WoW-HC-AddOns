@@ -14,25 +14,41 @@ local playerClass = select(2, UnitClass("player"))
 local canCure = {}
 local activeFrames = {} 
 local frameStates = {}
+local trackedFrames = {}
 
 -- Setup dispel capabilities based on player class
 local function InitDispelLogic()
     local classes = {
-        PRIEST = { Magic = true, Disease = true },
-        MAGE   = { Curse = true },
-        DRUID  = { Poison = true, Curse = true },
-        PALADIN = { Poison = true, Disease = true, Magic = true }
+        PRIEST  = { Magic = true, Disease = true },
+        MAGE    = { Curse = true },
+        DRUID   = { Poison = true, Curse = true },
+        PALADIN = { Poison = true, Disease = true, Magic = true },
+        SHAMAN  = { Poison = true, Disease = true }
     }
     canCure = classes[playerClass] or {}
 end
 
 -- Scan for dispellable debuffs
 local function UpdateFrameAuras(frame)
-    if not frame.unit or frame:IsForbidden() then return end
+    if not frame or frame:IsForbidden() then return end
     
+    local unit = frame.unit
+    
+    -- ignore nameplate frames
+    if not unit or string.match(unit, "^nameplate") then
+        if activeFrames[frame] then
+            activeFrames[frame] = nil
+            frameStates[frame] = nil
+            if frame.healthBar then
+                CompactUnitFrame_UpdateHealthColor(frame)
+            end
+        end
+        return
+    end
+
     local found = {}
     for i = 1, 40 do
-        local _, _, _, debuffType = UnitDebuff(frame.unit, i)
+        local _, _, _, debuffType = UnitDebuff(unit, i)
         if not _ then break end
         
         if debuffType and canCure[debuffType] then
@@ -48,22 +64,17 @@ local function UpdateFrameAuras(frame)
         activeFrames[frame] = found
 
         if frame.healthBar and not frameStates[frame] then
-            local r, g, b = frame.healthBar:GetStatusBarColor()
-            frameStates[frame] = { index = 1, lastSwitch = 0, origColor = { r = r, g = g, b = b } }
-        elseif frame.healthBar and frameStates[frame] and not frameStates[frame].origColor then
-            local r, g, b = frame.healthBar:GetStatusBarColor()
-            frameStates[frame].origColor = { r = r, g = g, b = b }
+            frameStates[frame] = { index = 1, lastSwitch = 0 }
         end
     else
-        if frameStates[frame] and frame.healthBar then
-            local orig = frameStates[frame].origColor
-            if orig then
-                frame.healthBar:SetStatusBarColor(orig.r, orig.g, orig.b)
+        if activeFrames[frame] then
+            activeFrames[frame] = nil
+            frameStates[frame] = nil
+            if frame.healthBar then
+                -- use native health color update instead of caching origColor
+                CompactUnitFrame_UpdateHealthColor(frame)
             end
         end
-
-        activeFrames[frame] = nil
-        frameStates[frame] = nil
     end
 end
 
@@ -102,6 +113,9 @@ local function OnUpdate()
         else
             activeFrames[frame] = nil
             frameStates[frame] = nil
+            if frame.healthBar then
+                CompactUnitFrame_UpdateHealthColor(frame)
+            end
         end
     end
 end
@@ -109,8 +123,24 @@ end
 local core = CreateFrame("Frame")
 core:SetScript("OnUpdate", OnUpdate)
 core:RegisterEvent("PLAYER_LOGIN")
+core:RegisterEvent("UNIT_AURA")
 
-core:SetScript("OnEvent", function()
-    InitDispelLogic()
-    hooksecurefunc("CompactUnitFrame_UpdateAuras", UpdateFrameAuras)
+core:SetScript("OnEvent", function(self, event, ...)
+    if event == "PLAYER_LOGIN" then
+        InitDispelLogic()
+        -- hook UpdateAll directly as UpdateAuras was removed in 1.15.9
+        hooksecurefunc("CompactUnitFrame_UpdateAll", function(frame)
+            if frame and not frame:IsForbidden() then
+                trackedFrames[frame] = true
+                UpdateFrameAuras(frame)
+            end
+        end)
+    elseif event == "UNIT_AURA" then
+        local unit = ...
+        for frame in pairs(trackedFrames) do
+            if frame.unit == unit or frame.displayedUnit == unit then
+                UpdateFrameAuras(frame)
+            end
+        end
+    end
 end)

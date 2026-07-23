@@ -1,7 +1,10 @@
-## Interface: 11508
-## Title: VanillaDruidManaBar
+## Interface: 11509
+## Title: Vanilla Druid Mana Bar
 ## Notes: Adds a mana bar while in cat or bear form while keeping the vanilla visual design.
 ## Author: Mâk
-## Version: 1.0.0
+## Category: Mâk's AddOns Pack
+## IconTexture: 236157
+## Version: 1.1.0
+## DefaultState: enabled
 ## SavedVariables: VDManaBar
 VanillaDruidManaBar.lua
