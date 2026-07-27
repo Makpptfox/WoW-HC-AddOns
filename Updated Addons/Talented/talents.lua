@@ -14,6 +14,8 @@ do
 	local GetTalentInfo = GetTalentInfo
 	local GetTalentPrereqs = GetTalentPrereqs
 	local TOOLTIP_TALENT_LEARN = TOOLTIP_TALENT_LEARN
+	-- fallback API changes
+	local GetActiveTalentGroup = GetActiveTalentGroup or GetActiveSpecGroup or function() return 1 end
 	
 	local function FillPrereqs(...)
 		if select("#", ...) < 3 then return end
@@ -79,6 +81,11 @@ do
 		return result
 	end
 end
+
+-- fallback API changes
+local GetAddOnMetadata = C_AddOns and C_AddOns.GetAddOnMetadata or GetAddOnMetadata
+local IsAddOnLoaded = C_AddOns and C_AddOns.IsAddOnLoaded or IsAddOnLoaded
+local LoadAddOn = C_AddOns and C_AddOns.LoadAddOn or LoadAddOn
 
 local function GetDataAddOnExpectedBuild()
 	local info = GetAddOnMetadata("Talented_Data", "X-ExpectedBuild")

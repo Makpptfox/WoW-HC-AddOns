@@ -1,7 +1,8 @@
-## Interface: 11508
+## Interface: 11509
 ## Title: Talented Data
 ## Notes: Gather localized information about the different talent trees of your toons
 ## Author: Jerry,Lethay
+## IconTexture: 132222
 ## SavedVariables: Talented_DataDB
 ## RequiredDeps: Talented
 ## OptionalDeps: Ace3

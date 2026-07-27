@@ -1,5 +1,6 @@
-## Interface: 11508
+## Interface: 11509
 ## Note: Add Spec Tabs to the Talented Frame.
+## IconTexture: 132222
 ## Dependency: Talented
 ## LoadOnDemand: 1
 ## DefaultState: Enabled

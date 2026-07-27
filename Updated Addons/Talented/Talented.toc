@@ -1,9 +1,11 @@
-## Interface: 11508
-## Title: Talented
+## Interface: 11509
+## Title: [Updated] Talented
 ## Name: Talented
 ## Notes: The Talent Template Editor
 ## Author: Jerry,Lethay, Updated by Mâk.
-## Version: v240928-SoD
+## Category: Mâk's AddOns Pack
+## IconTexture: 132222
+## Version: 3.0 for 1.15.9
 ## OptionalDeps: Ace3
 ## SavedVariables: TalentedDB
 ## X-Category: Interface Enhancements

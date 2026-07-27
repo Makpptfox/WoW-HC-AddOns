@@ -72,7 +72,11 @@ end
 
 -- Hook this function if you wanna change the way Talented loads its modules
 function Talented:LoadAddOn(name)
-	LoadAddOn(name)
+	-- fallback for API changes
+	local loader = C_AddOns and C_AddOns.LoadAddOn or LoadAddOn
+	if loader then
+		loader(name)
+	end
 end
 
 function Talented:OnInitialize()

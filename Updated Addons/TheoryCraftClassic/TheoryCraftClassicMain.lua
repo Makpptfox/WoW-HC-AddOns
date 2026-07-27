@@ -2,7 +2,14 @@
 
 TheoryCraft_AddonName = "TheoryCraftClassic"
 TheoryCraft_FormattedName = TheoryCraft_AddonName.."|cff00aeff(Redux)|r"
-TheoryCraft_Version   = GetAddOnMetadata(TheoryCraft_AddonName, "Version") -- Read from TOC file
+-- GetAddOnMetadata fallback
+if GetAddOnMetadata then
+	TheoryCraft_Version   = GetAddOnMetadata(TheoryCraft_AddonName, "Version") -- Read from TOC file
+elseif (C_AddOns and C_AddOns.GetAddOnMetadata) then
+	TheoryCraft_Version   = C_AddOns.GetAddOnMetadata(TheoryCraft_AddonName, "Version")
+else
+	TheoryCraft_Version = "Unknown"
+end
 
 TheoryCraft_TooltipData = {}
 TheoryCraft_Data = {}
@@ -474,8 +481,6 @@ function TheoryCraft_OnLoad(self)
 		end
 		i = i + 1
 	end
-
-	print(TheoryCraft_FormattedName, TheoryCraft_Version, TheoryCraft_Locale.LoadText)
 end
 
 --- OnShow ---
@@ -728,8 +733,12 @@ function TheoryCraft_CheckBoxShowDescription(self)
 	if string.find(text, "$cr") then
 		text = string.gsub(text, "$cr", round(TheoryCraft_intpercrit(), 2))
 	end
-	-- Use the default GameTooltip to show the popup descriptions for UI checkboxes.
-	GameTooltip_SetDefaultAnchor( GameTooltip, UIParent )
+	-- GameTooltip default anchor fallback
+	if GameTooltip_SetDefaultAnchor then
+		GameTooltip_SetDefaultAnchor(GameTooltip, UIParent)
+	else
+		GameTooltip:SetOwner(UIParent, "ANCHOR_CURSOR")
+	end
 	if TheoryCraft_CheckButtons[name].tooltiptitle then
 		GameTooltip:AddLine(TheoryCraft_CheckButtons[name].tooltiptitle, 1,1,1)
 	else

@@ -406,6 +406,7 @@ function SPF2.GetTradeSkillFromName(targetName)
 	end
 end
 
+local tradeSkillInputHooked = false;
 for i=1, MAX_TRADE_SKILL_REAGENTS do
 	local reagentButton = _G["TradeSkillReagent"..i];
 	local createButton = CreateFrame("Button", "TradeSkillReagent"..i.."CreateButton", reagentButton, "MagicButtonTemplate");
@@ -472,6 +473,16 @@ for i=1, MAX_TRADE_SKILL_REAGENTS do
 			end
 		end
 	end
+
+	if not tradeSkillInputHooked and TradeSkillInputBox then
+		TradeSkillInputBox:HookScript("OnTextChanged", function(self)
+			if TradeSkillFrame:IsVisible() then
+				TradeSkillFrame_Update();
+			end
+		end);
+		tradeSkillInputHooked = true;
+	end
+
 	hooksecurefunc("TradeSkillFrame_Update", createButton.Update);
 end
 

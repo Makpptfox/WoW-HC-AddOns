@@ -141,15 +141,6 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 * Fixed some talents not being selectable or having no tooltip.
 * Removed the pet talents tab as there is no pet talents in Classic HC.
 
-### [Account Wide Raid Profiles](https://www.curseforge.com/wow/addons/account-wide-raid-profiles)
-> *"Make blizzard raid profile settings account-wide."*
-
-**Implemented Fixes:**
-* Retroported the addon to work on the classic version of the game.
-* Removed the libs dependencies.
-* Removed the GUI. (Use `/awrp store`, `/awrp restore` and `/awrp status` to use the addon).
-* Added a global variable to store the profiles account-wide.
-
 ### [Sigma Profession Filter (Classic)](https://www.curseforge.com/wow/addons/sigma-profession-filter-classic)
 > *"WoWClassic Addon to filter the recipes of professions"*
 

@@ -1,7 +1,9 @@
-## Interface: 11402
-## Title: Sigma |cffbc5ff4Professions|r |cff000000|r|cffffffff Recipe Info|r
+## Interface: 11509
+## Title: Sigma Professions Recipe Info
 ## Author: Sigma88
-## Notes: Additional Recipe Informations module for |cffffcf00Sigma|r |cffbc5ff4Profession Filter|r |cff2e91f3(Classic)|r.
+## Notes: Additional Recipe Informations module for Sigma Profession Filter (Classic).
+## Category: Mâk's AddOns Pack
+## IconTexture: 134942
 ## Dependencies: SigmaProfessionFilter
 
 SigmaProfessionFilter_RecipeInfo.lua

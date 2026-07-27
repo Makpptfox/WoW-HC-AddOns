@@ -1,7 +1,10 @@
-## Interface: 11508
+## Interface: 11509
 ## Author: Endymon, Boothin, Scott, Xodious - Original Code by Aelian, Updated by Mâk.
-## Title: TheoryCraftClassic|cff00aeff(Redux)|r
-## Notes: Tells you everything about an ability, right on the tooltip.
+## Title: [Updated] TheoryCraftClassic
+## Category: Mâk's AddOns Pack
+## IconTexture: 237293
+## Version: 3.0 for 1.15.9
+## Notes: Tells you everything about an ability, right on the tooltip. Use /tc for options.
 ## SavedVariablesPerCharacter: TheoryCraft_Settings
 ## SavedVariables: TheoryCraft_SetBonuses, TheoryCraft_MitigationMobs, TheoryCraft_MitigationPlayers
 ## DefaultState: enabled

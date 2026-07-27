@@ -62,6 +62,9 @@ local InvButtons = {
 	[15] = CharacterBackSlot;
 }
 
+local ActionButton_ShowOverlayGlow = ActionButton_ShowOverlayGlow or function() end -- API fallback
+local ActionButton_HideOverlayGlow = ActionButton_HideOverlayGlow or function() end -- API fallback
+
 local AutoEnchant = function()
 	if CharacterFrame:IsVisible() then
 		local craftName = SigmaProfessionFilter[1].baseGetCraftInfo(GetCraftSelectionIndex());

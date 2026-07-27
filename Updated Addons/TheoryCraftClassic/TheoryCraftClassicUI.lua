@@ -340,20 +340,21 @@ function TheoryCraft_UpdateOutfitTab()
 		TheoryCraftAddStat("Agility", math.floor(TheoryCraft_GetStat("agility")))
 		TheoryCraftAddStat("Spirit", math.floor(TheoryCraft_GetStat("spirit")))
 	elseif (class == "DRUID") then
-		if UnitManaMax("player") == 100 then
-			TheoryCraftAddVital("Attack Power", math.floor(TheoryCraft_GetStat("attackpower")))
-			TheoryCraftAddVital("Crit Chance", round(TheoryCraft_GetStat("meleecritchancereal"), 2).."%")
-			TheoryCraftAddVital("Agi per Crit", round(TheoryCraft_agipercrit, 2))
-			TheoryCraftAddStat("Stamina", math.floor(TheoryCraft_GetStat("stamina")))
-			TheoryCraftAddStat("Strength", math.floor(TheoryCraft_GetStat("strength")))
-			TheoryCraftAddStat("Agility", math.floor(TheoryCraft_GetStat("agility")))
-		else
+		local powerType = UnitPowerType("player") or 0
+		if powerType == 0 then
 			TheoryCraftAddVital("Mana", math.floor(TheoryCraft_GetStat("totalmana")))
 			TheoryCraftAddVital("Normal Regen", round(TheoryCraft_Data.Stats["regen"]*2, 2).." / Tick")
 			TheoryCraftAddVital("Regen Whilst Casting", round(TheoryCraft_Data.Stats["icregen"]*2, 2).." / Tick")
 			TheoryCraftAddStat("Stamina", math.floor(TheoryCraft_GetStat("stamina")))
 			TheoryCraftAddStat("Intellect", math.floor(TheoryCraft_GetStat("intellect")))
 			TheoryCraftAddStat("Spirit", math.floor(TheoryCraft_GetStat("spirit")))
+		else
+			TheoryCraftAddVital("Attack Power", math.floor(TheoryCraft_GetStat("attackpower")))
+			TheoryCraftAddVital("Crit Chance", round(TheoryCraft_GetStat("meleecritchancereal"), 2).."%")
+			TheoryCraftAddVital("Agi per Crit", round(TheoryCraft_agipercrit, 2))
+			TheoryCraftAddStat("Stamina", math.floor(TheoryCraft_GetStat("stamina")))
+			TheoryCraftAddStat("Strength", math.floor(TheoryCraft_GetStat("strength")))
+			TheoryCraftAddStat("Agility", math.floor(TheoryCraft_GetStat("agility")))
 		end
 	else
 		TheoryCraftAddVital("Mana", math.floor(TheoryCraft_GetStat("totalmana")))

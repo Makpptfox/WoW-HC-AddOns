@@ -1877,9 +1877,12 @@ local function UpdateTarget(data)
 	end
 
 	if data.iscombo then
-		if data["description"] == nil then return end
+		if not data["description"] or data["description"] == "" or not data["beforecombo"] then
+			-- combo spell missing parsed description, avoid nil gsub crash
+			return data
+		end
 
-		local points = GetComboPoints("player", "target") -- Blizzard API
+		local points = GetComboPoints("player", "target") or 0 -- Blizzard API
 
 		data["mindamage"] = data["combo"..points.."mindamage"] or 0
 		data["maxdamage"] = data["combo"..points.."maxdamage"] or 0
