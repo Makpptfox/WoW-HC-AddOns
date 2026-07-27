@@ -132,6 +132,7 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 * Fixed inconsistent HPS/DPS detection.
 * Fixed the "-1000 sec" cast time display bug for certain instant cast spells.
 * Fixed real-time updating for spell numbers on the UI.
+* Fixed the "Vitals" tab not displaying informations correctly in the TC pannel when playing a Druid (Display depends on the form).
 
 ### [Talented Classic](https://www.curseforge.com/wow/addons/talented-classic)
 > *"A replacement talent UI that allows creation and application of templates for any class, and viewing of all talent trees in one window."*
@@ -156,6 +157,7 @@ All addons are provided "as is", without warranty of any kind. I do not claim ow
 * Fixed caching logic to safely load missing reagents, tools, and created items without throwing exceptions.
 * Fixed the "Training Points" label anchor offset resetting when collapsing headers with Leatrix Plus enabled.
 * Fixed 23rd line not being able to render when Leatrix Plus was enabled.
+* Fixed the "Craft Reagent: X" not multiplicating by the amount of item you plan to craft.
 
 ---
 
