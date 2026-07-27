@@ -1,3 +1,47 @@
+## 🔄 Update V6
+
+### Every AddOns:
+- Updated API changes.
+- Updated TOC.
+- Added a Category (As they are all within my pack I've taken the liberty of giving them all the same category as "Mâk's AddOns Pack").
+- Added Icons.
+- Removed the fancy colors as there is categories and icons now.
+
+### DynamicUILayout:
+- Newly created AddOn!
+- Dynamically change the UI layout depending on the size of your group using the new layout system within the Edit Mode.
+- Create as much layout as you want and go to the options to configure which layout has to change depending on the size of your party/raid.
+
+### CPArmor:
+- Added a check to avoid the rotation arrows on the character pannel if they are present.
+- Updated the logic for checking the adding/removal of armor while the character pannel is open.
+
+### DCAlert: 
+- Now unlocked by default on a fresh install.
+- No longer require to keep pressing alt to move it when unlocked.
+- Added a tooltip when unlocked to make things clearer.
+
+### RDH:
+- Fixed an issue caused by the new API that made the nameplates behave as if they were party members.
+- Despite a similar feature being present within the new Raid UI update, I've still updated this addOn as I prefer this way of showing debuff glows rather than Blizzard's one.
+
+### TheoryCraftClassic:
+- Fixed the "Vitals" tab not displaying informations correctly in the TC pannel when playing a Druid (Display depends on the form).
+- Fixed an lua error appearing sometimes on login when the addon loaded before the tooltips were populated.
+
+### Talented Classic:
+- Simple API update, nothing has been fixed or added.
+
+### Account Wide Raid Profiles:
+- Removed the addOn, the new API introduced the Layout system (Escape > Edit Mode) and do not uses Raid Profiles anymore making this addOn useless now, DynamicUILayout is its enhanced replacement.
+
+### Sigma Profession Filter (Classic):
+- Fixed the "Craft Reagent: X" not multiplicating by the amount of item you plan to craft.
+
+(Closes #1 )
+
+---------
+
 ## 🔄 Update V5
 
 ### Sigma Profession Filter (Classic): Fixes and Addition of the Addon to the pack.
