@@ -1,7 +1,5 @@
 # WoW Classic Hardcore Addons
 
-# (The "Updated" Addons ARE NOT (yet) updated to the new API as of 1.15.9!!)
-
 Collection of addons created and updated by and for myself, compatible with Classic Hardcore 1.15.9.
 
 All addons are provided "as is", without warranty of any kind. I do not claim ownership of the original code for the addons located in the `Updated Addons` folder. Original authors are credited via links to their respective project pages, and all modifications are strictly documented below.
